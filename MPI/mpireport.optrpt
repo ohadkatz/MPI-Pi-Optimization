@@ -1,0 +1,74 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+
+Begin optimization report for: main(int, char **)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at mpioptimizedpi.c(32,5) inlined into mpioptimizedpi.c(107,9)
+   remark #15300: LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at mpioptimizedpi.c(32,5) inlined into mpioptimizedpi.c(107,9)
+<Remainder loop for vectorization>
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at mpioptimizedpi.c(32,5) inlined into mpioptimizedpi.c(107,9)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at mpioptimizedpi.c(66,5) inlined into mpioptimizedpi.c(108,2)
+   remark #15300: LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at mpioptimizedpi.c(66,5) inlined into mpioptimizedpi.c(108,2)
+<Remainder loop for vectorization>
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at mpioptimizedpi.c(66,5) inlined into mpioptimizedpi.c(108,2)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: ScalarPiCalc(int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at mpioptimizedpi.c(32,5)
+   remark #15300: LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at mpioptimizedpi.c(32,5)
+<Remainder loop for vectorization>
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at mpioptimizedpi.c(32,5)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: VectorPiCalc(int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at mpioptimizedpi.c(66,5)
+   remark #15300: LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at mpioptimizedpi.c(66,5)
+<Remainder loop for vectorization>
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at mpioptimizedpi.c(66,5)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
