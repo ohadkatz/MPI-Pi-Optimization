@@ -3,12 +3,24 @@ Finding pi using MPI methods in two different ways in order to demonstrate how t
 
 mpipic.c will use scalar arithmetic whereas mpioptimizedpi.c uses floating point arithmetic with vectors in order to achieve significantly faster speeds.
 
+Tested Results using intel-vtune 2017.
+
 ## Included
 Makefile: compile mpipi.c and mpioptimizedpi.c 
 
 Batch Script: Used to run on HPC compute nodes instead of head nodes when testing efficiency
 
 pi: sample binary file
+
+Ohad: binary file of optimization comparison using intell compiler
+
+Ohad_gcc: binary file running on gcc
+
+mpireport.optreport: optimization report using intel compiler, shows vectorized loops
+
+mpioptimizedpi.c: comparison tool for both scalar and vectorized for loops.
+
+mpipi.c: simple MPI Pi finder with no vectorization.
 
 ## Preliminary Installation
 To start working with code, you must have both intel and intel-mpi downloaded on your path.
@@ -27,7 +39,8 @@ Also include batch script which works with Slurm Workload Manager in order to co
                   #SBATCH --ntasks-per-node= _____ 
                   
                   #SBATCH --constraint=______ 
-## To Run Code
+# To Run Code
+### To run mpipi.c
 Remove Binary file (pi)
 Must have both intel AND intel-MPI paths included to begin.
 To run file:
@@ -42,4 +55,13 @@ Next, you have two options to run the code:
           NOTE: IF USING SLURM YOU CAN USE
             -sbatch batch.sh
           
+### To run mpioptimizedpi.c 
+Simply compile using either mpiicc or gcc
+
+         -mpiicc -o NAME_OF_BINARY mpioptimizedpi.c
+Then Run with your specificied values(Repitions, Points) like so:
+
+         -./NAME_OF_BINARY #Repitions #Points <----------Make sure #points is very large(~1000000) for best results
+
+
       
