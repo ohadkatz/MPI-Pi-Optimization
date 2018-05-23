@@ -1,6 +1,7 @@
 # MPI-Pi-Optimization
-Finding pi using MPI methods in two ways in order to demonstrate how to achieve faster performance with HPC/Clusters
-mpipic.c will use scalar arithmetic wheras mpioptimizedpi.c uses floating point arithmetic with vectors in order to achieve significantly faster speeds.
+Finding pi using MPI methods in two different ways in order to demonstrate how to achieve faster performance with HPC/Clusters.
+
+mpipic.c will use scalar arithmetic whereas mpioptimizedpi.c uses floating point arithmetic with vectors in order to achieve significantly faster speeds.
 
 ## Included
 Makefile: compile mpipi.c and mpioptimizedpi.c 
@@ -10,7 +11,7 @@ Batch Script: Used to run on HPC compute nodes instead of head nodes when testin
 pi: sample binary file
 
 ## Preliminary Installation
-To start working with code, you msut first have both intel and intel-mpi downloaded on your path.
+To start working with code, you must have both intel and intel-mpi downloaded on your path.
 With these, we can use the mpiicc compiler to run our code!
 
 Also include batch script which works with Slurm Workload Manager in order to configure specific core usages on computer clusters.
@@ -29,7 +30,7 @@ Also include batch script which works with Slurm Workload Manager in order to co
 ## To Run Code
 Remove Binary file (pi)
 Must have both intel AND intel-MPI paths included to begin.
-To run first run:
+To run file:
 
           -mpiicc -o NAME_OF_BINARY mpipi.c
 
