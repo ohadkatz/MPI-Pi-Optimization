@@ -1,14 +1,12 @@
 ALL: pi
 SHELL = /bin/sh
 DIRS =
-pi: mpipi.c
-<<<<<<< HEAD:Makefile
-	mpicc -g -O3 -o mpipi mpipi.c -lm
-=======
-	mpicc -g -O3 -o PiBinary mpipi.c -lm
->>>>>>> f7ff80bb10067ec8a2e199eed39190ff9610102a:MPI/Makefile
-profile.alog: pi.c
-	mpicc -o mpipi.log -mpilog mpipi.c -lm
+pi: MPIoptimizedpi.c
+		mpicc -g -O3 -o mpipi  MPIoptimizedpi.c -lm
+		mpicc -g -O3 -o PiBinary  MPIoptimizedpi.c -lm
+
+profile.alog:  MPIoptimizedpi.c
+	mpicc -o mpipi.log -mpilog  MPIoptimizedpi.c -lm
 	mpirun -np 4 mpipi.log
 	/bin/mv mpipi.log_prifile.log profile.alog
 clean:
