@@ -101,12 +101,12 @@ int main(int argc, char *argv[])
     MPI_Init(&argc, &argv);
 
 
-   // for (i=0 ; i <= Nrepeat; i++)
-   // {	
-//        printf("Iteration #%d\n",i+1);
+   for (i=0 ; i < Nrepeat; i++)
+    {	
+        printf("Iteration #%d\n",i+1);
         ScalarPiCalc(Npoints);
 	VectorPiCalc(Npoints);
-   // }
+    }
 
     MPI_Finalize();
     return 0;
