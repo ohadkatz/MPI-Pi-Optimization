@@ -2,7 +2,7 @@ ALL: pi
 SHELL = /bin/sh
 DIRS =
 pi: mpipi.c
-	mpicc -g -O3 -o pi mpipi.c -lm
+	mpicc -g -O3 -o mpipi mpipi.c -lm
 profile.alog: pi.c
 	mpicc -o pi.log -mpilog pi.c -lm
 	mpirun -np 4 pi.log
